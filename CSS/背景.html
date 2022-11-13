@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>background</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style>
+        body{
+            background-image: url(./img/Android.png);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .box1 {
+            width: 800px;
+            height: 800px;
+            /*background-image: url(./img/Android.png);*/
+            /*    background-image设置背景图片
+            可以同时设置背景图片和背景颜色，这样颜色会成为图片的背景色
+            -如果背景图片的颜色小于元素，则背景图片会平铺在元素上面
+            -如果背景图片大于元素，则背景图片将会被裁剪
+*/
+            /*
+            background-repeat 用来设置元素重复方式
+                可选值：
+                repeat 默认值，背景沿着x,y重复
+                repeat-x 沿着x轴重复
+                repeat-y 沿着y周重复
+                no-repeat 不重复
+
+        */
+            /*
+            background-position 用来做设置背景图片位置
+                设置方式：
+                    通过left,right,top,bottom,center
+                默认情况下需要写两个值，不然第二个默认值为center
+                例如background-position：top left
+
+                也可以设置相关值，background-position:20px 30px;
+
+        */
+        /*
+            设置背景范围
+            background-clip
+                可选值：
+                       border-box 默认值，背景会出现在背景下面
+                       padding-box 背景不会出现在边框下面，只出现在内容区和内边距
+                       content-box 背景只会出现在内容区
+            background-origin 背景图片位置偏移量计算原始点
+                       padding-box 默认值，background-position从内边距开始计算
+                       content-box 图片背景偏移量从内容区开始计算
+                       border-box  图片背景偏移量从边框开始计算
+            background-size 背景图片大小
+                       第一个值表示宽度
+                       第二个值表示高度
+                       - 如果只设置一个值,则第二个值是 auto
+                    cover 图片比例不变，将元素铺满
+                    contain 图片比例不变，将图片在元素中完整显示
+            background-attachment
+                        背景图片是否跟随元素移动
+                        - 可选值
+                            scroll 默认值，跟着滚动
+                            fixed 背景固定在页面中，不会移动
+
+            background简写属性，可设置所有相关背景属性值，没有顺序要求
+
+        */
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div  class="box2" style="height: 1000px"></div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

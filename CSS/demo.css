@@ -1,0 +1,104 @@
+.top-box{
+    height: 60px;
+    width: 100%;
+    background-color: #10163A;
+    box-shadow:0 15px 35px black;
+    position: fixed;
+    z-index: 999;
+
+}
+@font-face {
+    /*指定字体的名字*/
+    font-family: myfont;
+    /*字体路径*/
+    src: url(./font/Bodoni-Regular-2.ttf);
+}
+.title{
+    font-family: myfont,serif;
+    font-size: 30px;
+    color: ghostwhite;
+    display: block;
+    height: 60px;
+    line-height: 60px;
+    float: left;
+}
+.vertical-bar{
+    width: 2px;
+    height: 30px;
+    background-color:#CCCC;
+    position: absolute;
+    left: 238px;
+    top: 15px;
+}
+.top-box a{
+    width:111px;
+    height: 60px;
+    background:url(img/logo1.png) no-repeat;
+    font-size: 0;
+    position: absolute;
+    left: 268px;
+
+}
+body{
+    margin:0;
+    background-image: url("./img/wallpaper.png");
+    height: 1500px;
+
+}
+.first-row{
+    width: 1167px;
+    height: 461px;
+    /*background-color: #779dbd;*/
+    position: relative;
+    top:135px;
+    left: 208px;
+    overflow: hidden;
+    /*box-shadow: 10px 10px 20px black;*/
+}
+.second-row{
+    width: 1167px;
+    height: 461px;
+    /*background-color: #779dbd;*/
+    position: relative;
+    top:135px;
+    left: 208px;
+    overflow: hidden;
+    /*box-shadow: 10px 10px 20px black;*/
+}
+.card a:link{
+    width:250px;
+    height: 370px;
+    background-color:rgba(164,203,203,0.6);
+    margin:40px 59px;
+    float: left;
+    /*box-shadow: 10px 20px 35px black;*/
+    border-radius: 35px;
+    overflow: hidden;
+    border: 10px white solid;
+    display: block;
+}
+.card a:hover{
+
+    box-shadow: 10px 20px 35px rgba(0,0,0,0.5);
+}
+.bottom-box a:link{
+    width: 60px;
+    height: 61px;
+    text-decoration: none;
+    display: block;
+    margin: 0 auto;
+
+
+}
+
+.bottom-box{
+    height: 60px;
+    width: 100%;
+    background-color: #10163A;
+    box-shadow:0 -20px 15px black;
+    position: fixed;
+    bottom:0;
+
+}
+
+

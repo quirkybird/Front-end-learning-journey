@@ -1,0 +1,22 @@
+ul{
+    list-style: none;
+}
+.images{
+
+    width:192px;
+    height:470px;
+    background-color: #F4F4F4;
+    margin: 0 auto;
+    padding-left:0px;
+    overflow: hidden;
+
+
+}
+.images li{
+    margin-bottom: 10px;
+
+}
+
+.images img{
+    width: 100%;
+}

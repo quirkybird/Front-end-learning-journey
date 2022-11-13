@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>字体族</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style>
+        @font-face {
+            /*指定字体的名字*/
+            font-family: myfont;
+            /*字体路径*/
+            src: url();
+        /*
+            dont-size可以将服务器中的字体直接提供给用户去使用
+
+        */
+        }
+        p{
+        /*
+            字体相关样式
+            color 设置字体颜色
+            font-size用来设置字体大小
+            和font-size相关单位
+                em相当于当前元素的一个font-size
+                rem相当于根元素的一个font-size
+             font-family 字体族（字体的样式）
+                可选值：
+                        serif衬线字体
+                        sans-serif非衬线字体
+                        monospace等宽字体
+
+                 font-family 可以指定多个字体，多个字体间隔使用，隔开
+                   字体生成优先使用第一个，第一个无法使用，使用第二个 以此类推
+
+        */
+            color:red;
+            font-size: 50px;
+            font-family: "Bookman", Georgia, "Times New Roman", serif;
+        }
+    </style>
+</head>
+<body>
+        <p>今天天气很不错，hello world!</p>
+
+</body>
+</html>

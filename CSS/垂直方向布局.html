@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>垂直布局</title>
+    <style>
+        .outer{
+            background-color: #bfa;
+        /*
+        默认情况下父元素会被内容撑开
+        */
+        }
+
+        .inner{
+            width:100px;
+            height:200px;
+            background-color: yellow;
+            margin-bottom:100px;
+        }
+
+        .box1{
+            width:200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+        /*
+            如果子元素超过了父元素，会发生溢出现象
+            使用overflow属性来设置溢出的子元素
+
+            可选值：
+            visible:默认值 子元素会从父元素中溢出，在父元素外部显示
+            hidden:一剪梅，溢出部分被裁剪
+            scroll:生成滚动条，以查看完整内容
+            auto:根据需要生成滚动条
+
+            也有分别处理不同方向的：
+            overflow-x:
+            overflow-y:
+
+        */
+        .box2{
+            width:100px;
+            height:100px;
+            background-color: #0040D0;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<!--        <div class="outer">
+            <div class="inner"></div>
+            <div class="inner"></div>
+
+     </div>-->
+            <div class="box1">
+                <div class="box2"></div>
+            </div>
+</body>
+</html>

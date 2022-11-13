@@ -1,0 +1,18 @@
+.card-box{
+    width: 188px;
+    height: 220px;
+    box-shadow: 1px 2px 20px black;
+    margin: 0 auto;
+}
+.movie-img{
+    width: 100%;
+    height: 78px;
+}
+.content{
+    width: 100%;
+    height: 110px;
+}
+.score-bar{
+    height: 32px;
+    width: 100%;
+}

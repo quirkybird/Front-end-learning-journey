@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3723469 */
+  src: url('iconfont.woff2?t=1666444125969') format('woff2'),
+       url('iconfont.woff?t=1666444125969') format('woff'),
+       url('iconfont.ttf?t=1666444125969') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 60px;
+  font-style: normal;
+    color: #D85140;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-yinlehe:before {
+  content: "\e620";
+}
+

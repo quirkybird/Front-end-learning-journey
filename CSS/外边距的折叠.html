@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>外边距的折叠</title>
+    <style>
+        .box1,.box2{
+            width:200px;
+            height:200px;
+            font-size: 100px;
+
+        }
+        .box1{
+            margin-bottom:100px;
+            background-color: #bfa;
+
+        /*
+               相邻的垂直方向外边距会发生重叠
+                 -兄弟元素
+                    兄弟间的相邻垂直外边距会取两者之间较大值（两者都是正值）
+                    特殊情况：如果一正一负，为两者相加
+                            如果都是负值，则去两者中绝对值较大的
+                            兄弟元素的重叠对开发有利，不需要处理
+                 -父子元素
+                     父子元素之间的，子元素会传递给父元素
+                     父子外边距折叠会影响布局，需要处理
+
+
+
+
+        */
+        }
+        .box2{
+            margin-top: 100px;
+            background-color: orange;
+
+        }
+
+
+    </style>
+</head>
+<body>
+
+        <div class="box1"></div>
+        <div class="box2"></div>
+</body>
+</html>

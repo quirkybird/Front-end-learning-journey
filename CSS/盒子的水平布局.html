@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>盒子的水平布局</title>
+    <style>
+        .outer{
+            width:800px;
+            height:200px;
+            border:10px red solid;
+        }
+        .inner{
+            width:200px;   /*width的值默认为auto*/
+            height:200px;
+            background-color: #00A000;
+            margin-left:auto;
+            margin-right:200px;
+        }
+
+    /*    元素的水平方向布局：
+            元素在其父元素中水平方向的位置由以下几个属性共同决定
+            margin-left：
+            border-left:
+            padding-left:
+            width
+            padding-right：
+            border-right
+            margin-right
+           -一个元素在其父元素中，必须满足以下等式：
+            margin-left +border-left +padding-left +width+padding-right+border-right+margin-right等于其父元素内容区宽度（必须满足）
+            不满足造成过度约束，自动调整
+                如果所有的值没有auto情况下，则会自动调整margin-right的值，使得等式成立
+             这七个值有三个人可设置为auto
+               -width
+               -margin-left
+               -margin-right
+                 如果某个值为auto，会自动调整auto的值
+
+             -如果将一个宽度和一个外边距设置为auto，宽度会调整为最大，外边距为0
+             -如果将宽度设置为固定值，两个外边距为auto，则两边会变为一样的值
+                所以经常利用这个特点，让其在父元素中居中
+                示例：
+                    width:xxxxpx;
+                    margin:0 auto;
+    */
+
+
+
+    </style>
+</head>
+<body>
+
+        <div class="outer">
+            <div class="inner"></div>
+
+
+        </div>
+
+</body>
+</html>

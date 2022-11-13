@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>径向渐变</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style>
+        .box1{
+            width:500px;
+            height: 500px;
+        /*
+            radial-gradient()径向渐变（反射性效果）
+            默认情况下，径向渐变的形状是根据元素的形状来判断
+                正方形-->圆形
+                长方形-->椭圆
+             我们可以指定径向渐变的大小
+             最前面添加circle
+
+             也可以指定渐变的位置
+             语法：at top...
+
+        */
+            background-image: radial-gradient(at top left,red,yellow)
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box1"></div>
+
+</body>
+</html>

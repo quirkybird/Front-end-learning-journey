@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    .box1{
+        /*内容区由width和height属性设置
+        */
+        width:200px;
+        height:200px;
+        background-color:#bfa;
+    /*
+           边框(border)
+           边框的大小会影响整个盒子的大小
+           border-width可以来指定四个方向的宽度（从上顺时针变化）
+                        也可以三个值（上 左右 下）
+                        也可以两个值（上下 左右）
+           border-color同上方法也可以指定方向颜色
+
+           border-style指定边框样式
+                solid 表示实线
+                dotted 点状虚线
+                dashed 虚线
+                double 双线
+
+            默认值:none
+    */
+        /*
+            border简写属性，通过属性设置相关样式，并且没有顺序要求
+            border:10px solid red;
+            border-top:
+            border-bottom:
+            border-right:
+            border-left:
+
+
+
+        */
+        border-width:10px;
+        border-color:red;
+        border-style:solid;
+
+
+    /*
+    外边距(margin)
+       -外边距不会影响盒子可见框大小
+       -四个方向的外边距
+            margin-top
+              -上外边距，设置一个正值，元素往下移动
+            margin-bottom
+              =设置一个正值，右边元素会有移动
+            margin-left
+              -左外边距，设置一个正值，元素往右移动
+            margin-right
+
+
+            元素在文档流中按照从左往右的顺序排列
+                所以默认情况下，我们设置左和上会移动元素本身
+                设置下和右时，移动其他元素
+            margin也可以设置负值，向其反方向移动
+            也有简写属性，与padding使用方法相同
+            margn会影响实际盒子大小
+
+
+    */
+margin-top:100px;
+margin-left: 100px;
+margin-bottom:30px;
+
+    }
+
+
+
+    .box2{
+        width:200px;
+        height:200px;
+        background-color:#bfa;
+
+        border:10px red solid;
+
+    /*
+    页边距（padding)
+    内容区和边框之间的距离为页边距
+    一共有四个方向的边距：
+        padding-top
+        padding-bottom
+        padding-left
+        padding-right
+     -内边距会影响盒子的大小
+     -背景颜色会延伸到内边距上
+     -一个盒子可见框的大小，由内容区和边框共同决定，计算盒子大小时，需要将三个区域加到一起
+     即：内容区+内边距+边框
+
+    */
+        padding: 100px;
+
+
+    }
+    .inner{
+        width: 200px;
+        height: 200px;
+        background-color: yellow;
+    }
+
+
+
+
+</style>
+<body>
+<!--
+    盒模型、盒子模型、框模型（box model)
+        -CSS页面设置为一个矩形盒子
+        -将元素设置为矩形后，对页面布局就变为了摆放不同的盒子
+        -每一个盒子都由以下几个部分组成
+             —内容区（content）
+             -边框（border）
+             -内边距（padding)
+             -外边距（margin)
+ -->
+<div class="box1"></div>
+<div class="box2">
+    <div class="inner"></div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>绝对定位的布局</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style>
+        .box1{
+            width:500px;
+            height:500px;
+            background-color: #bfa;
+            position: relative;
+
+        }
+        .box2{
+            width:200px;
+            height:200px;
+            background-color: orange;
+            position:absolute;
+            margin: auto;
+            left: 0;
+            right:0;
+            top:0;
+            bottom: 0;
+        /*
+            水平布局
+                当开启了绝对定位后：
+                    水品方向的布局等式就需要添加left和right
+                    此时规则和之前是添加了两个值
+                        当发生过度约束时
+                            如果九个值没有auto 则自动调整right调整
+                     -可设置auto的值
+                      margin width left right
+
+                      left和right默认值为auto，所以如果不知道left和right
+                      等值不满足时，会自动满足调整这两个值
+
+                      垂直方向布局等式也要满足
+                        top+margin-left+border-top+padding-left+height+padding-bottom+border-bottom+margin-bottom+bottom
+                        =包含块高度
+
+        */
+        /*    元素的层级
+                    如果元素都设置了position属性，则都会提升一个层级
+                    这时候可以用z-index手动规定层级大小，自然数，数值越大，越优先显示
+                    特点：祖先元素再高，也不会盖过后代元素
+        */
+
+
+
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</body>
+</html>

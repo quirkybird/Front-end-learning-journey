@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Flex</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .box{
+        /*
+            弹性盒子布局 flex
+            1.任何一个容器都可以指定为flex布局
+                -display:flex: 开启
+            2.行内元素也可以使用flex布局
+                -display:inline-flex;
+            3.设置为flex布局后，子元素的float,clear和vertical-align属性失效
+
+            二.基本概念
+            -采用flex布局的元素，称为flex容器，子元素自动成为容器内的成员，flex
+             item 项目
+            -容器中有根轴，水平轴（默认为主轴） 和 垂直轴（默认为交叉轴）
+            项目沿着主轴排列。
+            三.容器的属性
+            - flex-direction 主轴的方向
+             row 默认水平 ，row-reverse 水平
+             column column-reverse    垂直
+            - flex-wrap
+             项目是否在一条轴线上
+            - flex-flow
+             规定以上两个属性的简写
+
+             -justify-content
+              主轴对齐方式
+              flex-start,flex-end,center,space-between(空间在项目之间),
+              space-around（空间环绕项目），space-evenly(把空间等分环绕）
+             -align-items
+              交叉轴对齐方式
+               flex-start，flex-end,center,baseline(针对第一行文字基线对齐方式）
+               stretch(默认,项目未设置高度或者设为auto，占满整个给屏幕)
+             -align-content
+               多根轴线的对齐方式 一根轴不起作用
+               flex-start,flex-end,center,space-between(空间在项目之间),
+              space-around（空间环绕项目）,stretch(默认，轴线占满整个交叉轴）
+
+              四.项目的属性
+              -order：定义项目的排列顺序
+              -flex-grow： 定义项目的放大比例
+              -flex-shrink： 定义项目的缩小比例
+              -flex-basis： 定义项目占据的主轴空间
+              -flex ：上面三个的简写
+              -align-self ：定义项目滋生的对其放肆
+
+        */
+            display:flex;
+            width:900px;
+            height: 500px;
+            background-color: pink;
+            margin:100px auto;
+            justify-content: space-evenly;
+            /*align-items: baseline;*/
+
+        }
+        .box1 ,.box2,.box3{
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 50px;
+            color: aliceblue;
+        }
+        .box1{
+            background-color: red;
+        }
+        .box2{
+            background-color: blue;
+        }
+        .box3{
+            background-color: green;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>行内元素的盒模型</title>
+    <style>
+        .s1{
+        /*
+            行内元素不能设置高度和宽度
+            可以设置padding,不会影响页面布局
+            margin垂直方向不会影响布局，border方向同理
+
+        */
+
+        }
+        .box1{
+            width: 200px;
+            height:200px;
+            background-color: #bfa;
+
+
+
+        }
+        a{
+            /*
+              display 用来设置元素显示类型
+                 inline 把元素设置为行内元素
+                 block 把元素设置为块儿元素
+                 inline-block 设置为行内块元素
+                              -行内块，可以设置高度
+                 display:none 隐藏元素
+                 visibility: 用来做设置元素显示状态
+                           visible 默认值，在页面默认显示
+                           hidden 元素在页面隐藏，但仍然占据位置
+            */
+            display: block;
+            width:200px;
+            height: 200px;
+            background-color: lightblue;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <a>超链接</a>
+    <span class="s1">我是一个span</span>
+    <div class="box1"></div>
+
+
+</body>
+</html>

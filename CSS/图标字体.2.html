@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Doucument</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="./webfonts/css/all.css">
+    <style>
+        li{
+           list-style: none;
+        }
+        li::before{
+        /*    通过伪元素设置图标字体*/
+            content: '\f1b0';
+            font-family: 'Font Awesome 5 Free',sans-serif ;
+            font-weight: 900;
+            color: blue;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li >
+            锄禾日当午</li>
+        <li >
+            汗滴禾下土</li>
+        <li >
+            设置盘中餐</li>
+        <li >
+            粒粒皆辛苦</li>
+    </ul>
+<!--    实体-->
+    <span class="fas">&#xfof3;</span>
+</body>
+</html>
