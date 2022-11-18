@@ -11,9 +11,39 @@ javascript有以下数据类型:
 * "boolean"   表示值为布尔值
 * "string"    表示字符串
 * "number"    表示数值
-* "object"    表示一种复杂的的数据类型
-* "dunction"  表示值为函数
+* "object"    表示一种复杂的的数据类型  
+  1.狭义的对象（object）
+  2.数组（array）
+  3.函数（function）
+* "function"  表示值为函数
 * "symbol"    表示值为符号，es6新增类型
+
+#### typeof 运算符
+* `typeof`运算符
+* `instanceof`运算符
+* `Object.prototype.toString`方法
+
+`typeof`运算符可以返回一个值的数据类型。
+数值、字符串、布尔值分别返回为`number`,`string`,boolean`。
+```
+typeof 123
+typeof '123'
+typeof false
+```
+函数返回 `function`。
+```
+function f(){}
+typeof f
+```
+`undefined`返回`undefined`。
+`typeof undefined`
+
+`typeof`可以检查变量是否声明，未声明则报错。 `typeof 未声明`则不会报错。
+
+注意：`null`类型为`object`。这是一个历史原因，记住就好了。
+
+
+
 
 ### 变量
 * 如果只是声明变量而没有赋值，则该变量值是`undefined`。`undefined`是一个特殊值，表示‘无定义’。
@@ -21,9 +51,9 @@ javascript有以下数据类型:
 ``` 
 x  
 // ReferenceError: x is not defined 
-``` 
+```
 
-  
+
 * javascript是一种动态型语言，也就是说可以随时更改类型。
 * 变量提升：JavaScript 引擎的工作方式是，先解析代码，获取所有被声明的变量，然后再一行一行地运行。这造成的结果，就是所有的变量的声明语句，都会被提升到代码的头部，这就叫做变量提升。
 
