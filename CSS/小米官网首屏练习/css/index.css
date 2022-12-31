@@ -1,0 +1,144 @@
+/* 首屏样式表 index.html*/
+
+/* 顶部导航条 */
+.topContainer{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #333;
+}
+/* 设置左侧导航栏 */
+.service,.topBar Li{
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+/* 设置右边信息栏 */
+.shopCart,.userIfo{
+    float: right;
+    padding: 0;
+    margin: 0;
+}
+/* 设置所有超链接颜色 */
+.topBar a{
+    font-size: 12px;
+    color: #b0b0b0;
+    display: block;
+}
+.topBar a:hover{
+    color: white;
+
+}
+/* 设置竖线样式 */
+.topBar .line{
+    color:#424242;
+    margin: 0 0.3em;
+}
+/* 设置购物车样式 */
+.shopCart a{
+    width:120px;
+    background-color: #424242;
+    text-align: center;
+    margin-left: 25px;
+    position: relative;
+}
+.shopCart:hover a{
+    background-color: #fff;
+    color:#ff6700;
+}
+/* 设置二维码样式 */
+ #qrcode .QRcode{
+    position: absolute;
+    left: -40px;
+    width: 124px;
+    height: 148px;
+    line-height: 2em;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 1px 5px #aaa;
+    font-size: 14px;
+    color: #333;
+    display: none;
+
+}
+.topBar .QRcode img{
+    width: 90px;
+    margin:17px 17px 0 17px;
+}
+#qrcode{
+    position: relative;
+}
+/* 设置下载app下的小三角 */
+#qrcode::after{
+    content: '';
+    width: 0;
+    height: 0;
+    display: none;
+    position:absolute;
+    top: 33px;
+    left: 15px;
+    /* 设置四个方向的边框 */
+    border: 7px solid transparent;
+    /* 设置下边框颜色 */
+    border-top: none;
+    /* 单独设置下边框颜色 */
+    border-bottom-color: #fff;
+    
+
+
+}
+#qrcode:hover .QRcode,#qrcode:hover::after{
+    display: block;
+    
+}
+/* 购物车下拉栏 */
+.shopCart .cart-ifo{
+    height: 100px;
+    width: 296px;
+    box-shadow: 0 1px 5px #aaa;
+    color: #b0b0b0;
+    background-color: #fff;
+    line-height: 100px;
+    position: absolute;
+    left: -176px;
+    display: none;
+}
+
+.shopCart:hover .cart-ifo{
+    display: block;
+}
+
+/* 主要类目导航栏 */
+.classProduact{
+    height: 100px;
+    width: 100%;
+    line-height: 100px;
+    background-color: #fff;
+}
+/* logo */
+.classBar .mi-log{
+    width: 56px;
+    height: 56px;
+    float: left;
+    margin-top:22px;
+}
+.mi-log img{
+    width: 56px;
+}
+/* 中间栏 */
+.classBar .middle-class li{
+    font-size: 16px;
+    float: left;
+    padding: 0 26px 26px 0;
+}
+/* 搜索框 */
+.classBar .search-box,.middle-class{
+    float: right;
+}
+.classBar .search-box{
+    width: 297px;
+    height: 50px;
+    background-color: #ff6700;
+    margin-left: 40px;
+    margin-top:22px;
+}
