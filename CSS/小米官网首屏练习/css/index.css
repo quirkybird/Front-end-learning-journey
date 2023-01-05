@@ -49,6 +49,7 @@
     text-align: center;
     margin-left: 25px;
     position: relative;
+    z-index: 10;
 }
 
 .shopCart:hover a {
@@ -80,6 +81,7 @@
 
 #qrcode {
     position: relative;
+    z-index: 10;
 }
 
 /* 设置下载app下的小三角 */
@@ -127,6 +129,7 @@
 
 .shopCart:hover .cart-ifo {
     height: 100px;
+
 }
 
 /* 主要类目导航栏 */
@@ -151,10 +154,10 @@
 }
 
 /* 中间栏 */
-.classBar .middle-class .project{
+.classBar .middle-class .project {
     font-size: 16px;
     float: left;
-    padding: 0 26px 26px 0;
+    padding: 0 26px 0 0;
 }
 
 /* 搜索框 */
@@ -196,66 +199,240 @@
     transition: border 0.3s;
     font-size: large;
 }
+
 /* 可以选中外面的容器设置里面的属性 */
-.search-box:hover input{
+.search-box:hover input {
     border: 1px solid #a9a9a9;
 }
-.search-box:hover button{
+
+.search-box:hover button {
     border: 1px solid #a9a9a9;
     border-left: none;
 }
-.search-box button:hover{
-    background-color:#ff6700;
+
+.search-box button:hover {
+    background-color: #ff6700;
     color: #fff;
     transition: background-color 0.5s;
 }
+
 /* 搜索框下拉栏 */
-.search-box .search-pull{
+.search-box .search-pull {
     width: 243px;
     position: absolute;
     border: 1px solid #ff6700;
     line-height: 35px;
     display: none;
+    background-color: #fff;
 }
-.search-pull .pull{
+
+.search-pull .pull {
     width: 227px;
     height: 35px;
     padding-left: 16px;
     display: block;
 }
-.search-pull .pull:hover{
-    background-color: RGBA(220,220,220,0.2);
+/* 待解决问题，只有第一个样式生效，其余不生效 */
+.search-pull .pull:hover {
+    background-color: RGBA(220, 220, 220, 0.3);
 }
+
 .search-box input:focus,
-.search-box input:focus ~ button{
-    border-color:#ff6700;
+.search-box input:focus~button {
+    border-color: #ff6700;
 }
-.search-box input:focus ~.search-pull{
+
+.search-box input:focus~.search-pull {
     display: block;
     border-top: none;
 }
+
 /* 中间导航栏下拉栏 */
 
-.project-container{
+.project-container {
     width: 100%;
     height: 0;
-    border: 1px solid #a9a9a9;
     border-left: none;
     border-right: none;
     position: absolute;
-    top:100px;
+    top: 100px;
     left: 0;
-    transition: height 0.4s;
-}
-.project1{
-    width:200px;
-    float: left;
-    background-color: blue;
+    z-index: 100;
+    line-height: 60px;
+    font-size: 14px;
+    overflow: hidden;
+    transition: height 0.3s;
+    background-color: #fff;
 
 }
-.long-line{
+
+.project:hover .project-container{
+    border: 1px solid #E0E0E0;
+    height: 229px;
+    box-shadow: 0 2px 5px -2px #aaa;
+    
+}
+
+.project1 {
+    width: 200px;
+    height: 160px;
+    float: left;
+    text-align: center;
+
+}
+
+.project1 img {
+    margin-top: 30px;
+
+}
+
+.long-line {
     width: 1px;
-    height: 70px;
-    background-color: #aaa;
+    height: 100px;
+    float: left;
+    background-color: #E0E0E0;
+    margin-top: 30px;
+}
+
+.project .products:hover {
+    color: #ff6700;
+}
+/* 轮播图左侧商品分类 */
+.details {
+    height: 420px;
+    width: 20%;
+    line-height: 42px;
+    background-color:RGBA(128, 128, 128, 0.6);
+    padding: 20px 0 20px 0;
+    font-size: 14px;
+    float: left;
+    
+}
+.details-ifo a{
+    display: block;
+    height:42px;
+    width: 92%;
+    padding-left: 20px;
+    color: #fff;
+    position: relative;
+}
+.details-ifo i{
+    position: absolute;
+    right: 25px;
+    top: 15px;
+}
+.details-ifo a:hover{
+    background-color: #ff6700;
+}
+
+/* 轮播图符号 */
+.loop-picture{
+    width: 80%;
+    height: 462px;
+    float: left;
+    position: relative;
+   
+}
+#left{
+    width:50px;
+    height: 65px;
+    position: absolute;
+    top: 206px;
+    font-size:40px;
+    line-height: 65px;
+    text-align: center;
+    color: #E0E0E0;
+}
+#right{
+    width:50px;
+    height: 65px;
+    position: absolute;
+    top: 206px;
+    right: 0;
+    font-size:40px;
+    line-height: 65px;
+    text-align: center;
+    color: #E0E0E0;
+}
+#left:hover,#right:hover{
+    background-color:RGBA(220, 220, 220, 0.3) ;
+    color: #fff;
+    cursor:pointer;
+}
+.dot{
+    height: 10px;
+
+    position: absolute;
+    right: 50px;
+    bottom: 30px;
+}
+.dot li{
+    height: 8px;
+    width: 8px;
+    border-radius: 8px;
+    border: 3px solid RGBA(220, 220, 220, 0.8);
+    float: left;
+    margin:2px;
+    background-color: #a9a9a9;
+}
+.dot li:hover{
+    background-color: #fff;
+    cursor:pointer;
+}
+
+/* 推荐栏 */
+.subContainer{
+    margin-top: 20px;
+}
+.sub{
+    height: 170px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.sub .channel{
+    width: 234px;
+    background-color: #5f5750;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: space-evenly;
+}
+.channel .channel-ifo{
+    width: 70px;
+    height: 81px;
+    text-align: center;
+    line-height: 81px;
+    position: relative;
+}
+.channel .channel-ifo a{
+    color: #b0b0b0;
+}
+.channel .channel-ifo a:hover{
+    color: #fff;
+}
+.channel .channel-ifo i{
+    position: absolute;
+    top:15px;
+    left: 30px;
+    font-size: 15px;
+}
+.sub .channel li:nth-child(2),.sub .channel li:nth-child(5){
+    border-left:1px solid #a9a9a9;
+    border-right: 1px solid #a9a9a9;
+}
+.sub .channel li:nth-child(1),
+.sub .channel li:nth-child(2),
+.sub .channel li:nth-child(3){
+    border-bottom:1px solid #a9a9a9 ;
+}
+.sub img{
+    display: block;
+    width: 316px;
+    transition: box-shadow 0.3s;
+}
+.sub img:hover{
+    box-shadow: 0 5px 5px -2px RGBA(128, 128, 128, 0.6);
 }
 
