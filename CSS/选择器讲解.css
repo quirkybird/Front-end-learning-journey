@@ -81,7 +81,7 @@
           -伪类一般情况下使用:开头
           1. :first-child  第一个子元素
           2. :last-child 最后一个元素
-          3. :nth-child() 第n个子元素（n的范围为0到正无穷）
+          3. :nth-child() 第n个子元素（n的范围为1到正无穷）
             -特殊的，:nth-child(2n)表示选择偶数位置元素 even可替换2n  :nth-child(2n+1) odd也可替换2n+1
           注意:以上伪类均指的是所有元素的排序
 

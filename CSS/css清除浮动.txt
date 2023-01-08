@@ -1,0 +1,20 @@
+# css清除浮动
+方法一：使用带clear属性的空元素
+方法二：使用css的overflow属性
+方法三：给浮动元素容器添加浮动
+方法四：给浮动元素后面元素添加clear
+方法五：使用CSS的::after的伪元素
+
+其中方法二、方法三用到了BFC（Block Formatting Contexts）块级格式化上下文
+
+BFC有三个作用：
+1.包含内部浮动（开启BFC的元素可以包含浮动的子元素）
+2.排除外部浮动（开启BFC的元素不会被浮动元素所覆盖）
+3.阻止外边距重叠（父元素的垂直外边距不会和子元素重叠）
+
+如何开启BFC？
+1.浮动元素（元素的 float 不是 none）
+2.绝对定位元素（元素的 position 为 absolute 或 fixed）
+3.行内块元素
+4.overflow 值不为 visible 的块元素
+5.弹性元素（display为 flex 或 inline-flex元素的直接子元素）
