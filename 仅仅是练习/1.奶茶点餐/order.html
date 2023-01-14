@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+  <title>Forms Review</title>
+</head>
+
+<body>
+  <section id="overlay">
+
+    <p id="logo">Order your milktea!</p>
+    <hr>
+    <!-- 普通文字框 -->
+    <form action="submission.html" method="post">
+      <label for="text1">你想要什么口味的奶茶?</label>
+      <input type="text" id="text1" value="" minlength="1" maxlength="10" required ><br>
+      <hr>
+      <!-- 数字框 -->
+      <label for="cup_number">你想要几杯？</label>
+      <input type="number" id="cup_number" min="1" max="10" required><br>
+      <hr>
+      <!-- 范围框 -->
+      <span>你需要的糖分量</span><br>
+      <sapn>无糖</sapn><input type="range" id="sugar" main="1" max="5" step="1" value="1">
+      <sapn>全糖</sapn>
+      <br>
+      <hr>
+      <!-- 复选框 -->
+      <lable>你想要什么顶料？</lable><br>
+      <input type="checkbox" id="no1" name="冰淇淋" value="冰淇淋">
+      <label for="no1">冰淇淋</label>
+      <input type="checkbox" id="no2" name="奶盖" value="奶盖">
+      <label for="no2">奶盖</label>
+      <input type="checkbox" id="no3" name="可可粉" value="可可粉">
+      <label for="no3">可可粉</label><br>
+      <hr>
+      <!-- 单选框 -->
+      <!-- name值要相同 -->
+      <label>你要加冰吗？</label><br>
+      <input type="radio" id="yes" name="yn">
+      <label for="yes">Yes</label>
+      <input type="radio" id="no" name="yn">
+      <label for="no">No</label><br>
+      <hr>
+      <!-- 下拉列表 -->
+      <label>你需要加什么料？</label>
+      <select>
+        <option value="珍珠">珍珠</option>
+        <option value="波霸">波霸</option>
+        <option value="布丁">布丁</option>
+      </select><br>
+      <hr>
+
+      <label>你要什么规格？</label>
+      <select>
+        <option value="小杯">小杯</option>
+        <option value="中杯">中杯</option>
+        <option value="大杯">大杯</option>
+      </select><br>
+      <hr>
+      <!-- 多行文本输入框 -->
+      <label for="it">您还有什么要求？</label><br>
+      <textarea rows="4" cols="40" value="取值" id="it"></textarea><br>
+      <hr>
+      <!-- 电话号码输入框 -->
+      <label for="telp">您的联系方式</label>
+      <input type="text" id="telp" placeholder="请输入正确的电话号码！"><br>
+      <hr>
+      <!-- 提交按钮 -->
+      <button>提交</button>
+
+    </form>
+  </section>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>闭包和IIFE</title>
+  </head>
+  <body></body>
+  <script>
+    //         任务一（map方法）
+    //   基于 students 数组和 map()，编写匿名回调函数在 map()中调用，按如下要求处理 students 数据
+    //   以下面的格式为数组中的每个项目返回一个字符串： <name> :学号 <ID> 总分<score>排名第<rank>
+    //   将返回的数据存储在新的 studentsFullInfo 变量中
+    let students = [
+      { name: "Susan", ID: 1, score: "90", rank: 6 },
+      { name: "Jackson", ID: 2, score: "88", rank: 7 },
+      { name: "Bob", ID: 3, score: "45", rank: 18 },
+      { name: "Jennie", ID: 3, score: "99", rank: 1 },
+      { name: "Amy", ID: 3, score: "39", rank: 21 },
+      { name: "Lisa", ID: 3, score: "78", rank: 8 },
+    ];
+
+    let studentsFullInfo = students.map((currentValue) => {
+      return (
+        currentValue.name +
+        ":" +
+        "学号" +
+        currentValue.ID +
+        "总分" +
+        currentValue.score +
+        "排名第" +
+        currentValue.rank
+      );
+    });
+    console.log(studentsFullInfo);
+    // ["Susan：学号1总分90排名第6", "Jackson：学号2总分88排名第7"...]
+
+    //      任务二（filter方法）
+    // 基于 students 数组和 filter()，编写匿名回调函数在 filter()中调用，按如下要求处理 students 数据
+    // 筛选出成绩不及格的学生，
+    // 将返回的数据存储在新的 failList 变量中
+
+    let failList = students.filter((currentValue) => {
+      return currentValue.score < 60;
+    });
+    console.log(failList);
+
+    //     任务三（forEach）
+    // 参考数组方法forEach (opens new window)方法功能,编码实现一个 foreach()函数
+    let sum = 0;
+    let foreach = function (currentValue) {
+      return (sum += Number(currentValue.score));
+    };
+    students.forEach(foreach);
+    console.log("平均分：" + sum / students.length);
+
+    //闭包
+    // 任务
+    // 编写一个闭包函数实现一个函数式编程,完成两个非递减数组按顺序合并功能函数,调用形式 -> merge(arr1)(arr2)。
+    // 给你两个按 非递减顺序 排列的整数数组  arr1 和 arr2,请你 合并 arr2 到 arr1 中，使合并后的数组同样按 非递减顺序 排列。
+
+    
+  </script>
+</html>
