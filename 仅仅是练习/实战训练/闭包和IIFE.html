@@ -46,11 +46,11 @@
     });
     console.log(failList);
 
-    //     任务三（forEach）
+    //     任务三（forEach）!!!他总是返回undefined值
     // 参考数组方法forEach (opens new window)方法功能,编码实现一个 foreach()函数
     let sum = 0;
     let foreach = function (currentValue) {
-      return (sum += Number(currentValue.score));
+      sum += Number(currentValue.score);
     };
     students.forEach(foreach);
     console.log("平均分：" + sum / students.length);
