@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>闭包和IIFE</title>
   </head>
-  <body></body>
+  <body>
+    <button>Click Me</button>
+  </body>
   <script>
     //         任务一（map方法）
     //   基于 students 数组和 map()，编写匿名回调函数在 map()中调用，按如下要求处理 students 数据
@@ -63,6 +65,63 @@
     // 编写一个闭包函数实现一个函数式编程,完成两个非递减数组按顺序合并功能函数,调用形式 -> merge(arr1)(arr2)。
     // 给你两个按 非递减顺序 排列的整数数组  arr1 和 arr2,请你 合并 arr2 到 arr1 中，使合并后的数组同样按 非递减顺序 排列。
 
-    
+    let merge = function (arr1) {
+      // your code here
+      let arr3 = [];
+      return function (arr2) {
+        let arr3 = arr1.concat(arr2);
+        arr3.sort((a, b) => {
+          return a - b;
+        });
+        return arr3;
+      };
+    };
+    //测试用例
+    console.log(merge([1, 5, 8])([2, 4])); // =>[1,2,4,5,8]
+    console.log(merge([6, 9])([1, 2])); // =>[1,2,6,9]
+    //   立即调用函数表达式 (IIFE)
+    //  立即调用函数表达式 (IIFE) 是在定义之后立即被调用的函数。将 IIFE 和闭包结合使用可以创建一个私有作用域，从而维护内部定义变量的私有性。
+    //  而且，由于所创建的变量较少，IIFE 将有助于最大限度地减少对全局环境的污染，从而降低变量名称冲突的几率。
+
+    //     任务
+    // 立即调用函数表达式 (IIFE)应用：请编码实现按钮点击次数监听
+    // 用 count 变量记录按钮点击次数，
+    // 按钮每点击一次，count 就加一
+    // 当按钮点击了五次时，也就是 count = 5 时，count 清零重新计数，并弹出提示框您已点击五次按钮
+    // 以上功能需要在按钮点击事件处理程序中完成
+    // 要求 count 不能是全局变量，而是按钮点击事件局部私有变量
+    // 使用立即调用函数表达式 (IIFE)和闭包创建一个私有作用域
+
+    const btn = document.querySelector("button");
+    btn.addEventListener(
+      "click",
+      (function () {
+        // init the count to 0
+        let count = 0;
+        return () => {
+          count++;
+          if (count === 5) {
+            alert("你已经点击了五次按钮");
+            count = 0;
+          }
+        };
+        // your code here
+      })()
+    );
+    // 自测问题
+    // 1.什么是一级函数？
+    // 答：一级函数即一等公民，拥有和变量一样的权限，能被赋值，能被当做参数传递，能用return 返出来
+
+    // 2.什么是回调函数？
+    // 答：函数在之前定义好，在后面执行别的函数中调用的函数称为回调函数
+
+    // 3.什么是闭包？
+    // 答：允许嵌套函数访问其上一级函数的作用域，并且保留与上一级函数作用域的链接，保证上一级函数变量不会被垃回收。
+
+    // 什么是立即调用函数表达式？
+    // 答：字面意思，即是马上调用的声明的函数，通常不需要命名
+
+    // IIFE 有什么作用？
+    // 可以减少变量的命名，避免耦合，减少全局环境的污染，减少内存的使用，也可以加快代码执行速度
   </script>
 </html>
