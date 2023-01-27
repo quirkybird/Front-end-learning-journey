@@ -12,41 +12,65 @@
             justify-content: center;
 
         }
+        .clearfix::before,
+        .clearfix::after {
+           content: '';
+           display: table;
+           clear: both;
+        }
+        nav{
+            border-bottom: 2px solid #ccc;
+        }
         li{
             list-style: none;
         }
         .tabs{
-            background-color: pink;
+            background-color: yellowgreen;
             position: relative;
         }
         .nav-tabs ul li{
             float: left;
             padding:40px;
         }
+        a:link{
+            text-decoration: none;
+            color: black;
+        }
+        a:hover{
+            border-bottom: 5px solid red;
+        }
+        a:active{
+            color:chartreuse;
+        }
+        .active{
+            border-bottom: 5px solid red;
+        }
         section{
             position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%,-50%);
+            top: 150px;
+            padding: 0 80px;
             display: none;
         }
+        .tabs section:nth-of-type(1){
+            display: block;
+        }
+
     </style>
 </head>
 <body>
     <div class="tabs">
         <!-- 导航栏 -->
-        <nav class="nav-tabs">
+        <nav class="nav-tabs clearfix">
           <ul>
             <li>
-              <a class="tab active one" href="javascript:;" data-content = ".tabs  nth-of-type(1)">小孩的心</a>
+              <a class="tab active" href="javascript:;" data-content = ".tabs section:nth-of-type(1)">小孩的心</a>
             </li>
-            <li><a class="tab two" href="javascript:;" data-content = ".tabs  nth-of-type(2)">我们只不方便三小时</button></a>
+            <li><a class="tab" href="javascript:;" data-content = ".tabs section:nth-of-type(2)">我们只不方便三小时</button></a>
             <li>
-              <a class="tab three" href="javascript:;" data-content = ".tabs  nth-of-type(3)">年迈夫妻住旅馆</a>
+              <a class="tab" href="javascript:;" data-content = ".tabs section:nth-of-type(3)">年迈夫妻住旅馆</a>
             </li>
           </ul>
         </nav>
-      
         <!-- 内容栏 -->
         <section>有一位单身女子刚搬了家，她发现隔壁住了一户穷人家，一个寡妇与两个小孩子。有天晚上，那一带忽然停了电，那位女子只好自己点起了蜡烛。没一会儿，忽然听到有人敲门。
 
@@ -90,23 +114,24 @@
     添加 data-content 属性，data-content 值为对应显示 section 元素的选择器，这样来实现关联。 -->
 </body>
 <script>
-    const tab = document.querySelectorAll('.tab');
-    const one = document.querySelector('.one');
-    const two = document.querySelector('.two');
-    const three = document.querySelector('.three');
-    tab.addEventListener('click',(e) => {
-        switch(e.target?.class){
-            case one:
-            alert('失败')
-                break;
-            case two:
-                break;
-            case three:
-                break;
-            default:
-                break;
-        
-        }
+    let index = 0;
+    const tab = document.getElementsByClassName('tab');
+    let indexSections;
+    let preSections;
+    for(let i = 0; i < tab.length; i++){
+    tab[i].addEventListener('click',() => {
+       tab[index].classList.remove('active');
+       tab[i].classList.add('active');
+
+        //绑定事件
+       indexSections = document.querySelector(tab[i].dataset.content);
+       preSections = document.querySelector(tab[index].dataset.content);
+       preSections.style.display = 'none';
+       indexSections.style.display = 'block';
+
+       index = i;
+       
     });
+}
 </script>
 </html>
