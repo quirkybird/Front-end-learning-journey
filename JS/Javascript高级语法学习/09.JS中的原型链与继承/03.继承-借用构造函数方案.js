@@ -16,11 +16,13 @@ function Student(name, friends, age, sex, sno) {
 }
 
 // 注意书写顺序
-Student.prototype = new Person();
+Student.prototype = new Person;
 
 Student.prototype.studying = function () {
   console.log(this.name + " studying~");
 };
+console.log(Student.prototype)
+console.log(Person.prototype)
 
 var stu1 = new Student("qinye", ["quirkybird"], 20, "man", 21012267);
 console.log(stu1.name + stu1.sno);
