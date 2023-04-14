@@ -19,8 +19,22 @@ const objProxy = new Proxy(obj, {
     set: function(target, key, newValue){
         console.log(`监听到对象的${key}被修改了`)
         target[key] = newValue 
-    } 
+    },
+
+    //监听in的捕获器
+    has: function(target, key) {
+        console.log(`监听到对象的${key} in操作`)
+        return key in target
+    },
+
+    // 监听delete的捕获器
+    deleteProperty: function(target, key){
+        console.log(`监听到对象的${key}delete操作`)
+        delete target[key]
+    }
 })
 
 objProxy.age = 21
 console.log(objProxy.name)
+console.log("name" in objProxy)
+delete objProxy.age
