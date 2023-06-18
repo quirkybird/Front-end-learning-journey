@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" style="width: 300px; height: 50px;"/>
+    <button>取消</button>
+        <script src="./05_防抖函数_获取返回值.js"></script>
+
+        <script>
+            let counter = 1
+            const input = document.querySelector("input")
+            const cancelBtn = document.querySelector("button")
+            const fetchData = qbDebounce(function(e) {
+                console.log(`发送网络请求${counter++}: ${this.value} ${e}`)
+            }, 3000)
+            input.addEventListener("input", fetchData)
+            cancelBtn.addEventListener("click", () => {
+                fetchData.cancel()
+            })
+
+
+            const foo = qbDebounce(function() {
+                console.log("执行代码")
+                return "你是一只猪"
+            }, 1000, false)
+            foo(24).then(res => console.log(res))
+        </script>
+</body>
+</html>
