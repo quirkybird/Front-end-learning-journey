@@ -9,21 +9,21 @@
     <input type="text" style="width: 300px; height: 50px;"/>
     <button>取消</button>
         <script src="./05_防抖函数_获取返回值.js"></script>
-
+        <script src="./10_节流函数_取消和返回值.js"></script>
         <script>
             let counter = 1
             const input = document.querySelector("input")
             const cancelBtn = document.querySelector("button")
-            const fetchData = qbDebounce(function(e) {
+            const fetchData = qbThrottle(function(e) {
                 console.log(`发送网络请求${counter++}: ${this.value} ${e}`)
-            }, 3000)
+            }, 3000, false)
             input.addEventListener("input", fetchData)
             cancelBtn.addEventListener("click", () => {
                 fetchData.cancel()
             })
 
 
-            const foo = qbDebounce(function() {
+            const foo = qbThrottle(function() {
                 console.log("执行代码")
                 return "你是一只猪"
             }, 1000, false)

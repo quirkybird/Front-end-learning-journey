@@ -4,8 +4,8 @@ function qbDebounce(fn, delay, immediate = true) {
   let isInvoke = false;
   // 事件触发执行的函数
   const _debounce = function (...args) {
+     return new Promise((resolve, reject) => {
         try {
-          return new Promise((resolve, reject) => {
             if (timer) {
               // 如果有再次触发事件,那么取消上一次的事件
               clearTimeout(timer);
@@ -24,10 +24,11 @@ function qbDebounce(fn, delay, immediate = true) {
               timer = null; //指向函数后.将timer重置为null
               isInvoke = false;
             }, delay);
-          });
         } catch (error) {
           reject(error);
         }
+      });
+
   };
 
   //函数是一个一个对象,所以我们给它添加属性
