@@ -45,6 +45,16 @@ class qbPromise {
   }
 
   then(onFulfilled, onReject) {
+    const defaultOnRejected = (err) => {
+      throw err;
+    };
+    onReject = onReject || defaultOnRejected;
+
+    const defaultOnFulfilled = (value) => {
+      return value;
+    };
+    onFulfilled = onFulfilled || defaultOnFulfilled;
+
     return new qbPromise((resolve, reject) => {
       // 状态已经确定后的then方法调用
       if (this.status === PROMISE_STATUS_FULFILLED && onFulfilled) {
@@ -56,36 +66,45 @@ class qbPromise {
       }
       // 将回调函数放到数组中
       if (this.status === PROMISE_STATUS_PENDING) {
-        this.onFulfilledFns.push(() => {
-          execTryCatch(onFulfilled, this.value, resolve, reject);
-        });
-        this.onRejectFns.push(() => {
-          execTryCatch(onReject, this.reason, resolve, reject);
-        });
+        if (onFulfilled)
+          this.onFulfilledFns.push(() => {
+            execTryCatch(onFulfilled, this.value, resolve, reject);
+          });
+        if (onReject)
+          this.onRejectFns.push(() => {
+            execTryCatch(onReject, this.reason, resolve, reject);
+          });
       }
     });
   }
+
+  catch(onReject) {
+    return this.then(undefined, onReject);
+  }
+  finally(onFinally) {
+    this.then(
+      () => {
+        onFinally();
+      },
+      () => {
+        onFinally();
+      }
+    );
+  }
 }
 const promise = new qbPromise((resolve, reject) => {
-//   resolve("12321");
-    reject("9999")
+  // resolve("12321");
+  reject("9999");
 });
-// then优化三: then方法的链式调用
+// finally方法实现
 
 promise
-  .then(
-    (res) => {
-      console.log("res1:" + res);
-      return "32131";
-    },
-    (err) => {
-        console.log("err1:" + err)
-        return "78979"
-    }
-  )
-  .then(
-    (res) => {
-      console.log("res2:" + res);
-    },
-    (err) => console.log("err2:" + err)
-  );
+  .then((res) => {
+    console.log("res:" + res);
+  })
+  .catch((err) => {
+    console.log("err:" + err);
+  })
+  .finally(() => {
+    console.log("耍耍耍耍耍耍耍耍耍耍耍耍");
+  });
