@@ -5,7 +5,7 @@ function isObject(value) {
 }
 
 // 深拷贝函数封装
-function deepCopy(originValue, map = new WeakMap()) {
+function deepCopy(originValue, map = new WeakMap(originValue)) {
     if(!isObject(originValue)) {
         return originValue
     }
