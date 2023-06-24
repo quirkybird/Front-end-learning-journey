@@ -123,7 +123,7 @@ class qbPromise {
   // allSettled
   static allSettled(promises) {
     const values = [];
-    return new qbPromise((resolve, reject) => {
+    return new qbPromise(resolve => {
       promises.forEach((promise) => {
         promise.then(
           (res) => {
@@ -139,11 +139,31 @@ class qbPromise {
             }
           }
         );
-      });
-      if(values.length === promises.length) {
-        resolve(values)
-      }
+      })
     });
+  }
+  // race
+  static race(promises) {
+    return new qbPromise((resolve, reject) => {
+      promises.forEach(promise => {
+        promise.then(
+          res => {
+            resolve(res)
+       }, err => {
+            reject(err)
+        })
+      })
+    })
+  }
+  // any
+  static any(promises) {
+    return new qbPromise(resolve => {
+      promises.forEach(promise => {
+        promise.then(res => {
+          resolve(res)
+        })
+      })
+    }) 
   }
 }
 const p1 = new qbPromise((resolve, reject) => {
@@ -154,7 +174,7 @@ const p1 = new qbPromise((resolve, reject) => {
 const p2 = new qbPromise((resolve, reject) => {
   setTimeout(() => {
     reject("456");
-  }, 2000);
+  }, 200);
 });
 const p3 = new qbPromise((resolve, reject) => {
   setTimeout(() => {
@@ -163,6 +183,6 @@ const p3 = new qbPromise((resolve, reject) => {
   }, 3000);
 });
 
-qbPromise.allSettled([p1, p2, p3]).then((res) => {
+qbPromise.any([p1, p2, p3]).then((res) => {
   console.log(res)
-})
+}).catch(err => console.log("err:" + err))
